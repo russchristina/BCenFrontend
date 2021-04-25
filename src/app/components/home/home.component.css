@@ -1,7 +1,7 @@
 .titles {
     color: #235877;
     background: 'linear-gradient(to left, #374d93, #020024)';
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
     font-size: 40px;
     /* text-align: center; */
     font-weight: 600;
@@ -24,4 +24,15 @@
     background-color: black;
     width: 10px;
     height: 5px;
+}
+
+.nesCont {
+    margin-top: 45px;
+}
+
+.aboutHeart {
+    display: "inline-flex"
+}
+.heartCol {
+    margin-top: -6vh;
 }
