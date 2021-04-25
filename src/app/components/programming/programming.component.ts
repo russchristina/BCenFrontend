@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+/*This is where you will see events listed.*/
 @Component({
   selector: 'app-programming',
   templateUrl: './programming.component.html',
