@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  findAllEvents: 'http://localhost:8000/event/hostedEvents',
+  saveEvent: 'http://localhost:8000/event/new-event',
+  findAllResponsibilities: 'http://localhost:8000/responsibility/existing-responsibilities',
+  findAllUsers: 'http://localhost:8000/user/registered-users',
+  saveUser: 'http://localhost:8000/user/registration'
 };
 
 /*

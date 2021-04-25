@@ -9,7 +9,6 @@ export class User{
     public food_allergies:String;
     public paid_in_full:boolean;
     public can_donate:boolean;
-    public responsibilities:Responsibility[];
     public panels:String;
     public cosplays:String;
     public top_five_anime:String;
@@ -18,7 +17,7 @@ export class User{
     public top_two_ultimate_biases:String;
     public additional_info:String;
 
-    constructor(id:number, name:String, nick_name:String, favorite_color:String, favorite_candy:String, food_allergies:String, paid_in_full:boolean, can_donate:boolean, responsibilities:Responsibility[], panels:String, cosplays:String, top_five_anime:String, top_two_anime_characters:String, top_five_kpop_groups:String, top_two_ultimate_biases:String, additional_info:String){
+    constructor(id:number, name:String, nick_name:String, favorite_color:String, favorite_candy:String, food_allergies:String, paid_in_full:boolean, can_donate:boolean, panels:String, cosplays:String, top_five_anime:String, top_two_anime_characters:String, top_five_kpop_groups:String, top_two_ultimate_biases:String, additional_info:String){
         this.id = id;
         this.name = name;
         this.nick_name = nick_name;
@@ -27,7 +26,6 @@ export class User{
         this.food_allergies = food_allergies;
         this.paid_in_full = paid_in_full;
         this.can_donate = can_donate;
-        this.responsibilities = responsibilities;
         this.panels = panels;
         this.cosplays = cosplays;
         this.top_five_anime = top_five_anime;
