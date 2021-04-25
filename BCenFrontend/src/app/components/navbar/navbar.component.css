@@ -8,9 +8,33 @@
 
 nav div a {
     color: white;
+    font-family: 'DotGothic16', sans-serif;
     font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 2px;
 }
-
+.longLink {
+    max-width: 30px;
+    display: block;
+    margin-left: 5px;
+    margin-right: 75px;
+}
 nav ul li {
     justify-content: end;
 }
+.heartCol {
+    position: relative;
+}
+.hearts {
+    /* width: 220px;
+    height: 40px; */
+    
+    position: absolute;
+    /* margin-right: 0;
+    margin-left: auto;
+    margin-bottom: 0;
+    margin-top: auto; */
+    display: flex;
+    
+}
+    

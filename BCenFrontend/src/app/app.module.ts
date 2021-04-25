@@ -10,6 +10,7 @@ import { VolunteeringComponent } from './components/volunteering/volunteering.co
 import { ProgrammingComponent } from './components/programming/programming.component';
 import { SliderComponent } from './components/slider/slider.component'
 
+
 @NgModule({
   declarations: [
     AppComponent,

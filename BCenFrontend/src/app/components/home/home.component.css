@@ -1,0 +1,27 @@
+.titles {
+    color: #235877;
+    background: 'linear-gradient(to left, #374d93, #020024)';
+    margin-top: 5vh;
+    font-size: 40px;
+    /* text-align: center; */
+    font-weight: 600;
+    text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    border-radius: 2px;
+    margin-bottom: 0;
+    /* font-family: 'Bangers', cursive; */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.paragraphs {
+    /* text-align: left;  */
+    /* margin-left: 1vw;  */
+    font-weight: 300;
+    font-family: 'Press Start 2P', cursive;
+
+}
+
+.borderLine {
+    background-color: black;
+    width: 10px;
+    height: 5px;
+}
