@@ -7,7 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { VolunteeringComponent } from './components/volunteering/volunteering.component';
-import { ProgrammingComponent } from './components/programming/programming.component'
+import { ProgrammingComponent } from './components/programming/programming.component';
+import { SliderComponent } from './components/slider/slider.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProgrammingComponent } from './components/programming/programming.compo
     NavbarComponent,
     RegistrationComponent,
     VolunteeringComponent,
-    ProgrammingComponent
+    ProgrammingComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
