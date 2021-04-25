@@ -4,10 +4,10 @@ const path = require('path')
 
 const app = express()
 
-app.use(express.static(__dirname + '/dist/bcen'))
+app.use(express.static(__dirname + '/dist/BCenFrontend'))
 
 app.get('/*', function(req, res){
-    res.sendFile(path.join(__dirname + '/dist/bcen/index.html'))
+    res.sendFile(path.join(__dirname + '/dist/BCenFrontend/index.html'))
 })
 
 app.listen(process.env.PORT)
