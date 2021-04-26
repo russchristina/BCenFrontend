@@ -9,6 +9,7 @@ import { VolunteeringComponent } from './components/volunteering/volunteering.co
 import { ProgrammingComponent } from './components/programming/programming.component';
 import { SliderComponent } from './components/slider/slider.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -25,7 +26,8 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
