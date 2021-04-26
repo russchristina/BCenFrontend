@@ -10,6 +10,8 @@ import { ProgrammingComponent } from './components/programming/programming.compo
 import { SliderComponent } from './components/slider/slider.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 
 
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationComponent,
     VolunteeringComponent,
     ProgrammingComponent,
-    SliderComponent
+    SliderComponent,
+    FooterComponent,
+    ScrollToTopComponent
   ],
   imports: [
     BrowserModule,
