@@ -7,7 +7,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { VolunteeringComponent } from './components/volunteering/volunteering.component';
 import { ProgrammingComponent } from './components/programming/programming.component';
-import { SliderComponent } from './components/slider/slider.component'
+import { SliderComponent } from './components/slider/slider.component';
+
 
 
 

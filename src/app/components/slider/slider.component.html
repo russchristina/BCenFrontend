@@ -1,4 +1,4 @@
-<div id="carouselExampleControls" class="carousel slide photoSlider" data-bs-ride="carousel">
+<!-- <div id="carouselExampleControls" class="carousel slide photoSlider" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="../../assets/images/bcen-banner-regular.jpg" class="d-block w-100 mx-auto" alt="Acen Logo with date">
@@ -31,4 +31,16 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
+  </div> -->
+
+  <mdb-carousel [animation]="'slide'">
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="../../assets/images/bcen-banner-regular.jpg" alt="First slide">
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="../../assets/images/anton-maksimov-juvnsky-3jDZM3rgpz8-unsplash.jpg" alt="Second slide">
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="../../assets/images/deadmau5-clan.jpg" class="d-block w-100" alt="Third slide">
+    </mdb-carousel-item>
+  </mdb-carousel>

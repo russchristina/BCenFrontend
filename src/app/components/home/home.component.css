@@ -31,8 +31,9 @@
 }
 
 .aboutHeart {
-    display: "inline-flex"
+    display: "inline-flex";
 }
+
 .heartCol {
-    margin-top: -6vh;
+    margin-top: -5vh;
 }
