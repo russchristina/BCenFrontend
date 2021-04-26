@@ -38,7 +38,8 @@
     color: green; */
     /* position: absolute; */
     position: fixed;
-    margin-left: 82%;
+    /* margin-left: 3%; */
+    margin-left: 60px;
     bottom: 15px;
     
 }
