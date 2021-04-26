@@ -12,20 +12,20 @@
     background-color: black;
     width: 10px;
     height: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .heartCol {
     margin-top: -55px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 .nesCont {
-    margin-top: 25px;
+    margin-top: 35px;
 }
 .nes-kirby, .nes-bcrikko, .nes-ash, .nes-mario {
     height: 25px;
 }
 section {
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 .nes-balloon{
     max-width: 856px;
@@ -45,3 +45,4 @@ li {
 .pokez{
     font-size: 10px;
 }
+
