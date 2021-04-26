@@ -14,7 +14,7 @@ export class EventService {
     return this.http.get(environment.findAllEvents) as Observable<Event[]>
   }
 
-  saveEvent(newEvent:Event): void{
-    this.http.post(environment.saveEvent, JSON.stringify(newEvent))
+  saveEvent(newEvent:Event): Observable<Event>{
+    return this.http.post(environment.saveEvent, JSON.stringify(newEvent)) as Observable<Event>
   }
 }

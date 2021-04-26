@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
   registerUser(newUser:User){
     this.userService.saveUser(newUser).subscribe(
       data => {
-        
+        //We will need to add the user to the cache eventually
       },
       () => {
         console.log('Ooops! Something went wrong!')

@@ -12,6 +12,32 @@ S
   constructor(private eventService:EventService) { }
 
   ngOnInit(): void {
+    this.findAllEvents()
+  }
+
+  events:Event[] = []
+
+  findAllEvents():void{
+    this.eventService.findAllEvents().subscribe(
+      (data) => {
+        this.events = data
+      },
+      () => {
+        console.log('Ooops! Something went wrong!')
+      }
+    )
+  }
+
+  createEvent(newEvent:Event):void{
+    this.eventService.saveEvent(newEvent).subscribe(
+      (data) => {
+        this.events.push(data)
+        //Perhaps I should consider re-rendering the view after this addition to the array is made.
+      },
+      () => {
+        console.log('Ooops! Something went wrong!')
+      }
+    )
   }
 
 }
