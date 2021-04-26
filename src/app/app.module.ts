@@ -8,7 +8,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { VolunteeringComponent } from './components/volunteering/volunteering.component';
 import { ProgrammingComponent } from './components/programming/programming.component';
 import { SliderComponent } from './components/slider/slider.component';
-
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 
 
@@ -24,7 +24,8 @@ import { SliderComponent } from './components/slider/slider.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

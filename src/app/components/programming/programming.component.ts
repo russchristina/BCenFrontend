@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from 'src/app/services/event.service';
 
 /*This is where you will see events listed.*/
 @Component({
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./programming.component.css']
 })
 export class ProgrammingComponent implements OnInit {
-
-  constructor() { }
+S
+  constructor(private eventService:EventService) { }
 
   ngOnInit(): void {
   }

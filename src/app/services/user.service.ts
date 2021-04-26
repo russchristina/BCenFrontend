@@ -15,7 +15,7 @@ export class UserService {
     return this.http.get(environment.findAllUsers) as Observable<User[]>
   }
 
-  saveUser(newUser:User): void{
-    this.http.post(environment.saveUser, JSON.stringify(newUser))
+  saveUser(newUser:User): Observable<User>{
+    return this.http.post(environment.saveUser, JSON.stringify(newUser)) as Observable<User>
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponsibilityService } from 'src/app/services/responsibility.service';
 
 /*This is where we will list responsibilities.*/
 
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VolunteeringComponent implements OnInit {
 
-  constructor() { }
+  constructor(private responsibilityService:ResponsibilityService) { }
 
   ngOnInit(): void {
   }

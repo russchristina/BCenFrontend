@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/User';
 
 /*This is where we will send user data to the API*/
 
@@ -9,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+  }
+
+  registerUser(newUser:User){
+    this.userService.saveUser(newUser).subscribe(
+      data => {
+        
+      },
+      () => {
+        console.log('Ooops! Something went wrong!')
+      }
+    )
   }
 
 }
