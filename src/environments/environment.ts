@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  findAllEvents: 'http://localhost:8000/event/hostedEvents',
+  findAllEvents: 'http://localhost:8000/event/hosted-events',
   saveEvent: 'http://localhost:8000/event/new-event',
   findAllResponsibilities: 'http://localhost:8000/responsibility/existing-responsibilities',
   findAllUsers: 'http://localhost:8000/user/registered-users',
