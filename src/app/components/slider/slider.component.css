@@ -6,4 +6,19 @@
 
 .photoSlider {
     margin-top: 45px;
+    
+ 
+}
+
+.photoSlider img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    object-position:inherit;
+  /* height: auto; */
+  /* max-width: inherit; */
+}
+.mdslider {
+    
+    /* max-height: 287px; */
 }
