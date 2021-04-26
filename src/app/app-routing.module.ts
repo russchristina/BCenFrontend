@@ -8,7 +8,7 @@ import { VolunteeringComponent } from './components/volunteering/volunteering.co
 const routes: Routes = [
   {
     component: HomeComponent,
-    path: "/"
+    path: ""
   },
   {
     component: RegistrationComponent,
