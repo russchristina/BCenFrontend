@@ -8,34 +8,23 @@
     /* font-family: 'Bangers', cursive; */
     font-family: 'Press Start 2P', cursive;
 }
-
 .paragraphs {
-    /* text-align: left;  */
-    /* margin-left: 1vw;  */
     font-weight: 300;
     font-family: 'Press Start 2P', cursive;
     text-align: left;
-
 }
-
 .borderLine {
     background-color: black;
     width: 10px;
     height: 5px;
     margin-bottom: 45px;
 }
-
 .nesCont {
     margin-top: 45px;
 }
-
-
 .heartCol {
     margin-top: -55px;
-
 }
-
-
 .hearts {
     position: static;
     width: 100%;
