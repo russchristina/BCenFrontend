@@ -18,4 +18,8 @@ export class UserService {
   saveUser(newUser:User): Observable<User>{
     return this.http.post(environment.saveUser, JSON.stringify(newUser)) as Observable<User>
   }
+
+  findUser(user:User): Observable<User>{
+    return this.http.post(environment.findUser, JSON.stringify(user)) as Observable<User>
+  }
 }

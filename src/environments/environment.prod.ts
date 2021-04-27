@@ -4,6 +4,7 @@ export const environment = {
   saveEvent: 'https://bcen-backend.herokuapp.com/event/new-event',
   findAllResponsibilities: 'https://bcen-backend.herokuapp.com/responsibility/existing-responsibilities',
   findAllUsers: 'https://bcen-backend.herokuapp.com/user/registered-users',
-  saveUser: 'https://bcen-backend.herokuapp.com/user/registration'
+  saveUser: 'https://bcen-backend.herokuapp.com/user/registration',
+  findUser: 'https://bcen-backend.herokuapp.com/user/login'
 
 };
