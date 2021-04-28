@@ -21,6 +21,7 @@ S
     this.eventService.findAllEvents().subscribe(
       (data) => {
         this.events = data
+        console.log(this.events)
       },
       () => {
         console.log('Ooops! Something went wrong!')

@@ -11,9 +11,15 @@ import { User } from 'src/app/models/User';
 })
 export class RegistrationComponent implements OnInit {
 
+  newUser:User = new User()
+
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+  }
+
+  encryptPassword(){
+    //to be implemented
   }
 
   registerUser(newUser:User){

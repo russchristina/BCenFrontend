@@ -30,6 +30,7 @@ export class VolunteeringComponent implements OnInit, OnDestroy {
     this.responsibilityService.findAll().subscribe(
       (data) => {
         this.responsibilities = data
+        console.log(this.responsibilities)
       },
       () => {
         console.log('Ooops! Something went wrong!')
