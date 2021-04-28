@@ -37,4 +37,20 @@ nav ul li {
     display: flex;
     
 }
-    
+/* fix hamburger nav */
+/* @media (max-width: 768px) {
+
+} */
+
+@media (max-width: 425px) {
+    img {
+        max-width: 300px;
+        max-height: 100px;
+    }
+}
+
+.navbar-toggler {
+color: black;
+background-color: white;
+}
+
