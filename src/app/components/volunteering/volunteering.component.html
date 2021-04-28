@@ -67,89 +67,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-6 ">
-                            <li class="takenJobs">
-                                <h4 >Founder</h4> 
-                                <p>Founded by Brianna</p> 
-                            </li>
-                            <li>
-                                <h4>Donor</h4>
-                                <p>Donating is... 
-                                    <span>
-                                        <ul>
-                                            <li>
-                                                <span id="smTxt">not required,</span>
-                                            </li>
-                                            <li>
-                                                <span id="mdTxt"> but highly encouraged </span>
-                                            </li>
-                                            <li>
-                                                <span id="lgTxt">and GREATLY appreciated </span>
-                                            </li>
-                                        </ul>
-                                    </span>
-                                    
-                                    No! NOT blood, silly! Just 
-                                    <i class="nes-icon coin is-small"></i>
-                                    <i class="nes-icon coin is-small"></i>
-                                    <i class="nes-icon coin is-small"></i>!!!
-                                    BCen is the brainchild of Brianna, who has put in real hours and money 
-                                    <i class="nes-icon coin is-small"></i>
-                                    <i class="nes-icon coin is-small"></i>
-                                    <i class="nes-icon coin is-small"></i>
-                                into planning, organizing, and legitimizing BCen for YOU as a fragment of our beloved con canceled due to the Pon De Replay. Any donations to making this a great time would be suuper helpful. Paypal, FB Pay, Zelle all available!
-                            </p>  
-                            </li>
-                            <li>
-                                <h4>Associate Consuite</h4>
-                                <p>Works together with Chief Consuite to plan our event rations and prepare a food menu for the party. - limit 2</p>
-                                 
-                            </li>
-                            <li>
-                                <h4>Chief Consuite </h4>
-                                <p>Takes charge of preparing the food based on the Associate's menu! - limit - 2</p>
-                                
-                            </li>
-                            <li>
-                                <h4>Driver</h4>
-                                <p>Drives people everywhere lolz - limit 2</p>
-                                 
-                            </li>
-                            <li class="takenJobs">
-                                <h4>Website </h4>
-                                <p>Brianna + Christina. Did we kill this or naw? </p>
-                            </li>
-                        </div>
-                        <div class="col-1"></div>
-                        <div class="col-5">
-                            <li>
-                                <h4>Panelist</h4>
-                                <p>Prepares some of dat good ol' party fun!</p>
-                            </li>
-                            <li>
-                                <h4>DJ</h4>
-                                <p>Who got da jams? Provides the bops - limit 2</p>
-                                
-                            </li>
-                            <li>
-                                <h4>Vendor</h4>
-                                <p>Yes, money is to be made! Sells swag to party goers.</p>
-                            </li>
-                            <li>
-                                <h4>Costume Repair</h4>
-                                <p>Nurse Joy for cosplay, not pokemon. Mends threads! - limit 1</p>
-                               
-                            </li>
-                            <li>
-                                <h4>Program Coordinator</h4>
-                                <p>Someone who creates and manages scheduling - limit 3</p>
-                            </li>
-                            <li>
-                                <h4>Medic</h4>
-                                <p>Actual Nurse Joy... maybe of a pokemon, but mostly people. Gives first aid to party goers - limit 2</p>  
+                            <li *ngFor="let r of respeonsibilities" class="takenJobs">
+                                <h4 >{{r.name}}</h4>
+                                <p>Limit: {{r.upperlimit}}</p>  
+                                <p>{{r.description}}</p> 
                             </li>
                         </div>
                     </div>
-                    
                 </div>
             </ol>
         </div>
