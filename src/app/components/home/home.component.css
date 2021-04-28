@@ -86,3 +86,8 @@
         margin-left: auto;
     }
 }
+@media (max-width: 425px) {
+    #mdTxt {
+        margin-left: -10px;
+    }
+}
