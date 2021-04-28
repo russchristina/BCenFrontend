@@ -22,8 +22,8 @@ export class RegistrationComponent implements OnInit {
     //to be implemented
   }
 
-  registerUser(newUser:User){
-    this.userService.saveUser(newUser).subscribe(
+  registerUser(){
+    this.userService.saveUser(this.newUser).subscribe(
       data => {
         //We will need to add the user to the cache eventually
       },

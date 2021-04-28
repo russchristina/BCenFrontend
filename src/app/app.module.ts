@@ -12,6 +12,7 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -31,7 +32,8 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
