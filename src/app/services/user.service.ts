@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { User } from '../models/User';
@@ -16,7 +16,9 @@ export class UserService {
   }
 
   saveUser(newUser:User): Observable<User>{
-    return this.http.post(environment.saveUser, JSON.stringify(newUser)) as Observable<User>
+
+    let head:HttpHeaders = new HttpHeaders({"Content-Type":"application/json"})
+    return this.http.post(environment.saveUser, JSON.stringify(newUser), {headers:head}) as Observable<User>
   }
 
   findUser(user:User): Observable<User>{
