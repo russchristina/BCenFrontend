@@ -41,6 +41,7 @@ export class VolunteeringComponent implements OnInit, OnDestroy {
   //Define the logic for the user taking on a responsibility
   acceptResponsibility(responsibilityId:number):void{
     //Find the responsibility in the list of available responsibilities by its ID and check the number of participants
+    //I need to check that a user is not registered for more than 3 responsibilities.
     for(let r of this.responsibilities){
       if(r.id === responsibilityId && r.users.length < r.upperlimit){
         this.userCacheService.getUserData().subscribe(
