@@ -44,4 +44,19 @@
     
 }
 
+#smTxt {
+    font-size: 10px;
+    text-align: left;
+    margin-left: 145px;
+}
 
+#mdTxt {
+    font-size: 15px;
+    text-align: center;
+    margin-left: -145px;
+}
+
+#lgTxt {
+    font-size: 20px;
+    
+}
