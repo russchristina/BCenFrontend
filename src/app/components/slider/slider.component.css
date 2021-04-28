@@ -1,9 +1,3 @@
-/* .leftBtn, .rightBtn {
-    background: black;
-    opacity: 0.1;
-    width: 100px;
-} */
-
 .photoSlider {
     margin-top: 45px;
     
@@ -15,10 +9,34 @@
     width: 100%;
     object-fit: cover;
     object-position:inherit;
-  /* height: auto; */
-  /* max-width: inherit; */
+
 }
 .mdslider {
     
     /* max-height: 287px; */
 }
+
+@media (max-width: 1024px) {
+    .photoSlider img {
+        
+        width: 100%;
+        object-fit: cover;
+        object-position:inherit;
+    
+    }
+}
+@media (max-width: 425px) {
+    .photoSlider img {
+        max-height: 120px;
+        object-fit: cover;
+        
+    }
+}
+
+@media (max-width: 320px) {
+    .photoSlider img {
+        max-height: 100px;
+        object-fit: cover;
+        
+    }
+    }
