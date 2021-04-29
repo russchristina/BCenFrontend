@@ -7,14 +7,14 @@
     </div>
 
     <!-- 1st User's Panel -->
-    <div class="nes-container with-title nesCont is-dark is-rounded">
+    <div *ngFor="let e of events" class="nes-container with-title nesCont is-dark is-rounded">
         <div class="row ">
             <div class="col-3 ">
                 <h3>Host:</h3>
             </div>
             <div class="col-9 ">
                 <!-- Where the data gets pulled for user -->
-                <p>hardcoded User</p>
+                <p>{{e.creator}}</p>
             </div>
         </div>
         <div class="row">
@@ -23,7 +23,7 @@
             </div>
             <div class="col-9 ">
                 <!-- Where the data gets pulled for min participants -->
-                <p>Murda Mystery</p>
+                <p>{{e.title}}</p>
             </div>
         </div>
         <div class="row">
@@ -32,7 +32,7 @@
             </div>
             <div class="col-9 ">
                 <!-- Where the data gets pulled for min participants -->
-                <p>Anime</p>
+                <p>{{e.category}}</p>
             </div>
         </div>
         <div class="row">
@@ -41,7 +41,7 @@
             </div>
             <div class="col-9 ">
                 <!-- Where the data gets pulled for min participants -->
-                <p>7</p>
+                <p>{{e.minimumparticipants}}</p>
             </div>
         </div>
         <div class="row">
@@ -52,88 +52,14 @@
                 <div class="row field">
                     <div class="col-12 ">
                         <!-- Where the data gets pulled for user -->
-                        <p>Hard coded description: lorem ipsum blah blah lorem ipsum blah blahlorem ipsum blah blahlorem
-                            ipsum blah blahlorem
-                            ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum
-                            blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blah lorem ipsum blah blah lorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blah lorem ipsum blah blah
-                            lorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem
-                            ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum
-                            blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blah
+                        <p>{{e.description}}
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- 2nd User's Panel Not Dark. Alternating? -->
-    <div class="nes-container with-title nesCont is-rounded">
-        <div class="row ">
-            <div class="col-3 ">
-                <h3>Host:</h3>
-            </div>
-            <div class="col-9 ">
-                <!-- Where the data gets pulled for user -->
-                <p>hardcoded User 2</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 ">
-                <h5>Panel Title:</h5>
-            </div>
-            <div class="col-9 ">
-                <!-- Where the data gets pulled for min participants -->
-                <p>Sqsh Thrst Ngh!</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 ">
-                <h5>Panel Category:</h5>
-            </div>
-            <div class="col-9 ">
-                <!-- Where the data gets pulled for min participants -->
-                <p>Wrld of Y__i</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 ">
-                <h5>Minimum Participants:</h5>
-            </div>
-            <div class="col-9 ">
-                <!-- Where the data gets pulled for min participants -->
-                <p>3</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <h5>Description:</h5>
-            </div>
-            <div class="container col-9">
-                <div class="row field">
-                    <div class="col-12 ">
-                        <!-- Where the data gets pulled for user -->
-                        <p>Hard coded description: lorem ipsum blah blah lorem ipsum blah blahlorem ipsum blah blahlorem
-                            ipsum blah blahlorem
-                            ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum
-                            blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blah lorem ipsum blah blah lorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blah lorem ipsum blah blah
-                            lorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem
-                            ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum
-                            blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blah
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- 3rd User's Panel -->
     <div class="nes-container with-title nesCont is-dark is-rounded">
         <div class="row ">
@@ -142,7 +68,7 @@
             </div>
             <div class="col-9 ">
                 <!-- Where the data gets pulled for user -->
-                <p>hardcoded User 3</p>
+                <p>Founder-Nim</p>
             </div>
         </div>
         <div class="row">
@@ -180,18 +106,7 @@
                 <div class="row field">
                     <div class="col-12 ">
                         <!-- Where the data gets pulled for user -->
-                        <p>Hard coded description: lorem ipsum blah blah lorem ipsum blah blahlorem ipsum blah blahlorem
-                            ipsum blah blahlorem
-                            ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum
-                            blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blah lorem ipsum blah blah lorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blah lorem ipsum blah blah
-                            lorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem
-                            ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum
-                            blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah blahlorem ipsum blah
-                            blah
+                        <p>The most anticipated rave of the BCen weekend: Soap Sud! Aptly named to remind participants to come so fresh n' so clean for a night JAM packed with bops, lights, and vibes. Dance until the break of dawn!
                         </p>
                     </div>
                 </div>
