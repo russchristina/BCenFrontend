@@ -55,6 +55,17 @@
     
 }
 
+@media (max-width: 1450px) {
+    .regBtn {
+        position: unset;
+        width: fit-content;
+        bottom: 15px;
+        /* position: relative; */
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
 @media (max-width: 1024px) {
     .regBtn {
         width: 25px;
@@ -63,6 +74,7 @@
         left: 80%;
     }
 }
+
 
 @media (max-width: 768px) {
     

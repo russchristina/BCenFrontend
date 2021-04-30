@@ -46,3 +46,8 @@ li {
     font-size: 10px;
 }
 
+@media (max-width: 425px) {
+    .titles {
+        font-size: 26px;
+    }
+}
