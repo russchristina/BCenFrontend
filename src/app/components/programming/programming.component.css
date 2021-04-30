@@ -2,7 +2,7 @@
     margin-right: auto;
     margin-left: auto;
 }
-.nesCont {
+.topper {
     margin-top: 45px;
 }
 .titles {
@@ -19,5 +19,43 @@
     background-color: black;
     width: 10px;
     height: 5px;
+    margin-bottom: 45px;
 }
 
+
+h3, h5, #intro {
+    /* color:#c9f3c9; */
+    /* color:#ffd014; */
+    color: #235877;
+}
+.submit {
+    position: absolute;
+    right: 40px;
+}
+
+.finalRow {
+    margin-bottom: 45px;
+}
+
+@media (max-width: 768px) {
+    h3, h5 {
+        min-width: 240px;
+        /* font-size: 26px; */
+    }
+
+    .col-9 {
+        margin-left: 165px;
+    }
+}
+@media (max-width: 425px) {
+    .titles {
+        font-size: 26px;
+    }
+    .col-9 {
+        margin-left: 90px;
+    }
+    #descr {
+        min-width: 75vw;
+        margin-left: -90px;
+    }
+}

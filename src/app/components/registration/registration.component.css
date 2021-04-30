@@ -43,4 +43,10 @@ li {
     label, input, textarea {
         min-width: 300px;
     }
+    .nes-container {
+        min-width: 420px;
+    }
+    .titles {
+        font-size: 26px;
+    }
 }
