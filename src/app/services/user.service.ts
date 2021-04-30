@@ -18,6 +18,7 @@ export class UserService {
   saveUser(newUser:User): Observable<User>{
 
     let head:HttpHeaders = new HttpHeaders({"Content-Type":"application/json"})
+
     return this.http.post(environment.saveUser, JSON.stringify(newUser), {headers:head}) as Observable<User>
   }
 

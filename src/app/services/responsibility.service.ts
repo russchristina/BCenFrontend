@@ -14,4 +14,8 @@ export class ResponsibilityService {
   findAll(): Observable<Responsibility[]>{
     return this.http.get(environment.findAllResponsibilities) as Observable<Responsibility[]>
   }
+
+  update(responsibilities:Responsibility[]):Observable<Responsibility[]>{
+    return this.http.post(environment.saveResponsibilities, JSON.stringify(responsibilities)) as Observable<Responsibility[]>
+  }
 }

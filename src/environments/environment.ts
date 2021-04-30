@@ -7,6 +7,7 @@ export const environment = {
   findAllEvents: 'http://localhost:8000/event/hosted-events',
   saveEvent: 'http://localhost:8000/event/new-event',
   findAllResponsibilities: 'http://localhost:8000/responsibility/existing-responsibilities',
+  saveResponsibilities: 'http://localhost:8000/responsibility/modified-responsibilities',
   findAllUsers: 'http://localhost:8000/user/registered-users',
   saveUser: 'http://localhost:8000/user/registration',
   findUser: 'http://localhost:8000/user/login'
