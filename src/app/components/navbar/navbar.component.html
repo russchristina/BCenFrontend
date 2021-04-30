@@ -1,43 +1,49 @@
 <!-- all anchor hrefs are now routerLink -->
 <nav class="navbar navbar-expand-lg navnav ">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="">
-        <img id="bcenlogo" src="..\..\assets\images\bcennavlogo1.png" width="450px" height="150px" />
-      </a>
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">
+      <img id="bcenlogo" src="..\..\assets\images\bcennavlogo1.png" width="450px" height="150px" />
+    </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
-          </li>
-          <li class="nav-item">
-              <!-- change this to anchor to about section with router navigation? -->
-            <a class="nav-link " aria-current="page" routerLink="/#about">About</a>
-          </li>
-          <li class="nav-item">
-            <!-- change this to anchor to rules section -->
-          <a class="nav-link" aria-current="page" routerLink="/#rules">Rules</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
         </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" routerLink="programming">Programming</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" routerLink="volunteering">Volunteering</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link longLink" aria-current="page" routerLink="register">Register Now</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link longLink"  aria-current="page" href="https://www.airbnb.com/rooms/28737303?source_impression_id=p3_1619323155_S0mkJO7rexpf0GqW" target="_blank">2021 Hotel Blocks</a>
-          </li>
-        </ul>
-        
-      </div>
-    </div>
-  </nav>
 
-  
+        <li *ngFor="let arr of ids" class="nav-item">
+          <a [routerLink]='"."' [fragment]="arr" class="nav-link " aria-current="page">{{arr}}</a>
+        </li>
+
+
+
+        <!-- <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="/#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/#rules">Rules</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="programming">Programming</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="volunteering">Volunteering</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link longLink" aria-current="page" routerLink="register">Register Now</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link longLink" aria-current="page"
+            href="https://www.airbnb.com/rooms/28737303?source_impression_id=p3_1619323155_S0mkJO7rexpf0GqW"
+            target="_blank">2021 Hotel Blocks</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
