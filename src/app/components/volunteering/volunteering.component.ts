@@ -24,12 +24,6 @@ export class VolunteeringComponent implements OnInit, OnDestroy {
     this.findAllResponsibilities()
   }
 
-  ngOnDestroy():void{
-    //Actually, you don't need to change anything about the user as my user model doesn't track responsibilities. Rather, responsibilities track users. As such, I only need to add users to the responsibility and update the responsibility.
-    this.updateResponsibilities()
-
-  }
-
   responsibilities:Responsibility[] = [];
   userSelectedResponsibilities:Responsibility[] = []
 
