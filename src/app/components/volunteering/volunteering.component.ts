@@ -16,7 +16,7 @@ import { User } from 'src/app/models/User';
   templateUrl: './volunteering.component.html',
   styleUrls: ['./volunteering.component.css']
 })
-export class VolunteeringComponent implements OnInit, OnDestroy {
+export class VolunteeringComponent implements OnInit {
 
   constructor(private responsibilityService:ResponsibilityService, private userCacheService:UserCacheService) { }
 
