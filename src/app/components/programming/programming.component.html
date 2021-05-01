@@ -21,13 +21,13 @@
         <div class="col-4">
             <div class="nes-field">
                 <label for="name_field">Your name</label>
-                <input [(ngModel)]="newEvent.creator" type="text" id="name_field" class="nes-input" />
+                <input [(ngModel)]="newEvent.creator.name" type="text" id="name_field" class="nes-input" />
             </div>
         </div>
         <div class="col-2">
             <div class="nes-field">
                 <label for="name_field">Min. # Ppl</label>
-                <input [(ngModel)]="newEvent.minimum_participants"type="text" id="name_field" class="nes-input" placeholder="2"/>
+                <input [(ngModel)]="newEvent.minimumparticipants"type="text" id="name_field" class="nes-input" placeholder="2"/>
             </div>
         </div>
         <div class="col-6">
@@ -119,7 +119,7 @@
             </div>
             <div class="col-9 ">
                 <!-- Where the data gets pulled for user -->
-                <p>{{e.creator}}</p>
+                <p>{{e.creator.name}}</p>
             </div>
         </div>
         <div class="row">

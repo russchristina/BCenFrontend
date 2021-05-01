@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import {Event} from 'src/app/models/Event'
@@ -16,6 +16,7 @@ export class EventService {
   }
 
   saveEvent(newEvent:Event): Observable<Event>{
-    return this.http.post(environment.saveEvent, JSON.stringify(newEvent)) as Observable<Event>
+    let headers = new HttpHeaders({'Content-Type':'application/json'})
+    return this.http.post(environment.saveEvent, JSON.stringify(newEvent), {headers: headers}) as Observable<Event>
   }
 }
