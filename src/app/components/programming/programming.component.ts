@@ -19,6 +19,7 @@ S
   events:Event[] = []
   newEvent:Event = new Event()
 
+
   findAllEvents():void{
     this.eventService.findAllEvents().subscribe(
       (data) => {
