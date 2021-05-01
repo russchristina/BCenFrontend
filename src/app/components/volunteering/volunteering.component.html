@@ -74,7 +74,7 @@
                                       <span>Choose me!</span>
                                     </label>
                                   </div>
-                                <p># of Spots: {{r.upperlimit - r.users.length}} / {{r.upperlimit}}</p>  
+                                <p># of Spots: {{(r.users.length >= r.upperlimit) ? 0 : r.upperlimit - r.users.length}} / {{r.upperlimit}}</p>  
                                 <p>{{r.name}}</p>     
                             </li>
                         </div>
