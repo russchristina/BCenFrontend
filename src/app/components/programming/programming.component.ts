@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import {Event} from 'src/app/models/Event'
+import { User } from 'src/app/models/User';
+import { UserCacheService } from 'src/app/services/user-cache.service';
 
 /*This is where you will see events listed.*/
 @Component({
@@ -10,7 +12,7 @@ import {Event} from 'src/app/models/Event'
 })
 export class ProgrammingComponent implements OnInit {
 S
-  constructor(private eventService:EventService) { }
+  constructor(private eventService:EventService, private userCacheService:UserCacheService) { }
 
   ngOnInit(): void {
     this.findAllEvents()
@@ -33,6 +35,15 @@ S
   }
 
   createEvent():void{
+    this.userCacheService.getUserData().subscribe(
+      (data) => {
+        this.newEvent.creator = data
+        console.log(data)
+      },
+      () => {
+        console.log('Could not get cached user!')
+      }
+    )
     this.eventService.saveEvent(this.newEvent).subscribe(
       (data) => {
         this.events.push(data)
