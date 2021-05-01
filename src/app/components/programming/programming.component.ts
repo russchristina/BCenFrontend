@@ -17,6 +17,7 @@ S
 
   events:Event[] = []
 
+
   findAllEvents():void{
     this.eventService.findAllEvents().subscribe(
       (data) => {

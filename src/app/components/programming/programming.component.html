@@ -10,8 +10,9 @@
         <div class="col-6">
             <p id="intro">Give us details on your panel and add it to the list!</p>
         </div>
+        <!-- match this one up later -->
         <div class="col-6">
-            <button type="button" class="nes-btn is-warning submit">Add!
+            <button (click)="createEvent()"type="button" class="nes-btn is-warning submit">Add!
             </button>
         </div>
     </div>
@@ -20,19 +21,19 @@
         <div class="col-4">
             <div class="nes-field">
                 <label for="name_field">Your name</label>
-                <input type="text" id="name_field" class="nes-input" />
+                <input [(ngModel)]="newEvent.creator" type="text" id="name_field" class="nes-input" />
             </div>
         </div>
         <div class="col-2">
             <div class="nes-field">
                 <label for="name_field">Min. # Ppl</label>
-                <input type="text" id="name_field" class="nes-input" placeholder="2"/>
+                <input [(ngModel)]="newEvent.minimum_participants"type="text" id="name_field" class="nes-input" placeholder="2"/>
             </div>
         </div>
         <div class="col-6">
             <div class="nes-field">
                 <label for="name_field">Panel Title</label>
-                <input type="text" id="name_field" class="nes-input" />
+                <input [(ngModel)]="newEvent.title"type="text" id="name_field" class="nes-input" />
             </div>
         </div>
     </div>
@@ -41,19 +42,75 @@
         <div class="col-6">
             <div class="nes-field">
                 <label for="name_field">Category</label>
-                <input type="text" id="name_field" class="nes-input" placeholder="Kpop, Anime, Games, Fashion, etc."/>
+                <input [(ngModel)]="newEvent.category"type="text" id="name_field" class="nes-input" placeholder="Kpop, Anime, Games, Fashion, etc."/>
             </div>
         </div>
         <div class="col-6">
             <div class="nes-field">
                 <label for="name_field">Description</label>
-                <textarea type="text" id="name_field" class="nes-input"></textarea>
+                <textarea [(ngModel)]="newEvent.description"type="text" id="name_field" class="nes-input"></textarea>
             </div>
         </div>
     </div>
     <div class="row title aboutHeart">
         <h2 class="titles" id="panelList">Panels</h2>
     </div>
+
+    <!-- Example User's Panel -->
+    <div class="nes-container with-title nesCont is-dark is-rounded">
+        <div class="row ">
+            <div class="col-3 ">
+                <h3>Host:</h3>
+            </div>
+            <div class="col-9 ">
+                <!-- Where the data gets pulled for user -->
+                <p>Founder-Nim</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 ">
+                <h5>Panel Title:</h5>
+            </div>
+            <div class="col-9 ">
+                <!-- Where the data gets pulled for min participants -->
+                <p>Soap Sud</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 ">
+                <h5>Panel Category:</h5>
+            </div>
+            <div class="col-9 ">
+                <!-- Where the data gets pulled for min participants -->
+                <p>Rave</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 ">
+                <h5>Min # of Ppl:</h5>
+            </div>
+            <div class="col-9 ">
+                <!-- Where the data gets pulled for min participants -->
+                <p>3</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <h5>Description:</h5>
+            </div>
+            <div class="container col-9">
+                <div class="row field">
+                    <div class="col-12 ">
+                        <!-- Where the data gets pulled for user -->
+                        <p id="descr">The most anticipated rave of the BCen weekend: Soap Sud! Aptly named to remind participants to come so fresh n' so clean for a night JAM packed with bops, lights, and vibes. Dance until the break of dawn!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- 1st User's Panel -->
     <div *ngFor="let e of events" class="nes-container with-title nesCont is-dark is-rounded">
         <div class="row ">
@@ -101,60 +158,6 @@
                     <div class="col-12 ">
                         <!-- Where the data gets pulled for user -->
                         <p>{{e.description}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 3rd User's Panel -->
-    <div class="nes-container with-title nesCont is-dark is-rounded">
-        <div class="row ">
-            <div class="col-3 ">
-                <h3>Host:</h3>
-            </div>
-            <div class="col-9 ">
-                <!-- Where the data gets pulled for user -->
-                <p>Founder-Nim</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 ">
-                <h5>Panel Title:</h5>
-            </div>
-            <div class="col-9 ">
-                <!-- Where the data gets pulled for min participants -->
-                <p>Soap Sud</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 ">
-                <h5>Panel Category:</h5>
-            </div>
-            <div class="col-9 ">
-                <!-- Where the data gets pulled for min participants -->
-                <p>Rave</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 ">
-                <h5>Min # of Ppl:</h5>
-            </div>
-            <div class="col-9 ">
-                <!-- Where the data gets pulled for min participants -->
-                <p>3</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <h5>Description:</h5>
-            </div>
-            <div class="container col-9">
-                <div class="row field">
-                    <div class="col-12 ">
-                        <!-- Where the data gets pulled for user -->
-                        <p id="descr">The most anticipated rave of the BCen weekend: Soap Sud! Aptly named to remind participants to come so fresh n' so clean for a night JAM packed with bops, lights, and vibes. Dance until the break of dawn!
                         </p>
                     </div>
                 </div>
