@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Responsibility } from '../models/Responsibility';
 import { environment } from 'src/environments/environment';
@@ -16,6 +16,7 @@ export class ResponsibilityService {
   }
 
   update(responsibilities:Responsibility[]):Observable<Responsibility[]>{
-    return this.http.post(environment.saveResponsibilities, JSON.stringify(responsibilities)) as Observable<Responsibility[]>
+    let headers = new HttpHeaders({'Content-Type':'application/json'})
+    return this.http.post(environment.saveResponsibilities, JSON.stringify(responsibilities), {headers:headers}) as Observable<Responsibility[]>
   }
 }

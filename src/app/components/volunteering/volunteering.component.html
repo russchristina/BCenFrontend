@@ -70,7 +70,7 @@
                                 <h4 >{{r.description}}</h4>
                                 <div id={{r.id}} style="background-color:#212529; padding: 10px; width:220px;">
                                     <label>
-                                      <input type="checkbox" class="nes-checkbox is-dark" unchecked />
+                                      <input (click)="selectResponsibility(r.id)" type="checkbox" class="nes-checkbox is-dark" unchecked />
                                       <span>Choose me!</span>
                                     </label>
                                   </div>
@@ -84,7 +84,7 @@
         </div>
     </div>
     <div class="col-6">
-        <button (click)="" type="button" class="nes-btn is-warning submit">Submit!
+        <button (click)="updateResponsibilities()" type="button" class="nes-btn is-warning submit">Submit!
         </button>
     </div>
 </div>
