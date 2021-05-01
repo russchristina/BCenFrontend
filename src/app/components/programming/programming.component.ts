@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
+import {Event} from 'src/app/models/Event'
 
 /*This is where you will see events listed.*/
 @Component({
@@ -16,6 +17,7 @@ S
   }
 
   events:Event[] = []
+  newEvent:Event = new Event()
 
   findAllEvents():void{
     this.eventService.findAllEvents().subscribe(
@@ -29,8 +31,8 @@ S
     )
   }
 
-  createEvent(newEvent:Event):void{
-    this.eventService.saveEvent(newEvent).subscribe(
+  createEvent():void{
+    this.eventService.saveEvent(this.newEvent).subscribe(
       (data) => {
         this.events.push(data)
         //Perhaps I should consider re-rendering the view after this addition to the array is made.

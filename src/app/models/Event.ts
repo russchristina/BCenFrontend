@@ -8,7 +8,7 @@ export class Event{
     public category:String;
     public minimumparticipants:String;
 
-    constructor(id:number, title:String, creator:User, category:String, minimum_participants:String){
+    constructor(id:number = 0, title:String ="", creator:User = new User(), category:String = "", minimum_participants:String = ""){
         this.id = id;
         this.title = title;
         this.creator = creator;
