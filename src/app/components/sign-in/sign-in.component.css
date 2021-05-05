@@ -1,0 +1,37 @@
+section {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+}
+
+.nes-field {
+    margin-bottom: 25px;
+    min-height: fit-content;
+}
+button {
+    left: 82.5%;
+}
+
+@media (max-width: 1440px) {
+    section {
+        width: 50%;
+        margin-left: 18%;
+        margin-top: 15vh;
+    }
+    button {
+        left: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    section {
+        width: 300px;
+        margin-left: 30px;
+        margin-top: 5vh;
+    }
+    button {
+        left: 15%;
+    }
+}
+
