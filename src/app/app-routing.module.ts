@@ -4,6 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ProgrammingComponent } from './components/programming/programming.component';
 import { VolunteeringComponent } from './components/volunteering/volunteering.component';
+import { SignInComponent } from './components/sign-in/sign-in.component'
+
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
@@ -28,6 +30,10 @@ const routes: Routes = [
     component: VolunteeringComponent,
     path: "volunteering"
   },
+  {
+    component: SignInComponent,
+    path: "sign-in"
+  }
 ];
 
 @NgModule({
