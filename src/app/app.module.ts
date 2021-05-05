@@ -14,7 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
-import { SignInComponent } from './components/sign-in/sign-in.component'
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 
 
