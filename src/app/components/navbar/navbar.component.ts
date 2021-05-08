@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  isNavbarCollapsed = true
   name = "anchLinks";
   ids: Array<String> = ["About", "Rules"]
 
