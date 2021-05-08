@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {
     component: SignInComponent,
-    path: "sign-in"
+    path: "sign-up"
   }
 ];
 

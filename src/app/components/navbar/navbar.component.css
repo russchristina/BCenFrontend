@@ -88,3 +88,9 @@ nav {
     background-image: linear-gradient(25deg, #226992 25%, #130e5c 75%);
 }
 }
+
+@media (max-width: 371px) {
+    .navnav, button {
+    background-image: linear-gradient(25deg, #226992 25%, #130e5c 75%);
+}
+}
