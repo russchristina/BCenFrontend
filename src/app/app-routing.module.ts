@@ -5,6 +5,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ProgrammingComponent } from './components/programming/programming.component';
 import { VolunteeringComponent } from './components/volunteering/volunteering.component';
 import { SignInComponent } from './components/sign-in/sign-in.component'
+import { CanActivateRoutes } from './auth/Authorization';
 
 
 const routerOptions: ExtraOptions = {
@@ -20,15 +21,18 @@ const routes: Routes = [
   },
   {
     component: RegistrationComponent,
-    path: "register"
+    path: "register",
+    canActivate: [CanActivateRoutes]
   },
   {
     component: ProgrammingComponent,
-    path: "programming"
+    path: "programming",
+    canActivate: [CanActivateRoutes]
   },
   {
     component: VolunteeringComponent,
-    path: "volunteering"
+    path: "volunteering",
+    canActivate: [CanActivateRoutes]
   },
   {
     component: SignInComponent,
