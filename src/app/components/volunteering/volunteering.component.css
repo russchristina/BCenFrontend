@@ -46,8 +46,54 @@ li {
     font-size: 10px;
 }
 
+@media (max-width: 1200px) {
+    .nes-balloon {
+        max-width:85%;
+    }
+    .titles {
+        margin-bottom: 45px;
+       
+    }
+    .heartCol {
+        min-width: fit-content;
+    }
+}
+
+@media (max-width: 1024px) {
+    
+}
+
+@media (max-width: 991px) {
+    .nes-balloon {
+        max-width:75%;
+    }
+}
+
+@media (max-width: 767px) {
+    .nes-balloon {
+        max-width: 65%;
+    }
+}
+
+@media (max-width: 471px) {
+    .nes-balloon {
+        max-width: 55%;
+    }
+}
+
 @media (max-width: 425px) {
     .titles {
         font-size: 26px;
+    }
+}
+
+@media (max-width: 400px) {
+    .nes-balloon {
+        max-width: 45%;
+    }
+}
+@media (max-width: 400px) {
+    .star {
+        font-size: 15px;
     }
 }
