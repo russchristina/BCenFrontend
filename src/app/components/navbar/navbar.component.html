@@ -19,13 +19,13 @@
         <li *ngFor="let arr of ids" class="nav-item">
           <a [routerLink]='"."' [fragment]="arr" class="nav-link " aria-current="page">{{arr}}</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="currentUser" class="nav-item">
           <a class="nav-link" aria-current="page" routerLink="programming">Programming</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="currentUser" class="nav-item">
           <a class="nav-link" aria-current="page" routerLink="volunteering">Volunteering</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="currentUser" class="nav-item">
           <a class="nav-link longLink" aria-current="page" routerLink="register">Register Now</a>
         </li>
         <li class="nav-item">
