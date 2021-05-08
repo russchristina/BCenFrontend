@@ -2,11 +2,14 @@
     border-radius: 70px;
 }
 
-.navnav {
-    background-image: linear-gradient(15deg, #226992 0%, #110e41 100%);
+nav {
+    padding: 0;
+    box-shadow: none;
 }
 
-
+.navnav, button {
+    background-image: linear-gradient(15deg, #226992 0%, #110e41 100%);
+}
 nav div a {
     color: white;
     font-family: 'DotGothic16', sans-serif;
@@ -27,21 +30,10 @@ nav ul li {
     position: relative;
 }
 .hearts {
-    /* width: 220px;
-    height: 40px; */
-    
     position: absolute;
-    /* margin-right: 0;
-    margin-left: auto;
-    margin-bottom: 0;
-    margin-top: auto; */
     display: flex;
     
 }
-/* fix hamburger nav */
-/* @media (max-width: 768px) {
-
-} */
 
 @media (max-width: 425px) {
     img {
@@ -49,9 +41,50 @@ nav ul li {
         max-height: 100px;
     }
 }
-
-.navbar-toggler {
+/* .navbar-toggler {
 color: black;
 background-color: white;
+} */
+
+/* 
+mdb-navbar .navbar.navbar-3 .navbar-toggler-icon {
+    background-image: url('https://mdbcdn.b-cdn.net/img/svg/hamburger1.svg?color=6a1b9a');
+} */
+
+/* .navbar .in .nav li {
+   display: block;
+   float: none;
+   width:100%;
+}
+.nav-back {
+    background-image: linear-gradient(15deg, #226992 0%, #110e41 100%);
+    color: white;
+}
+nav {
+    box-shadow: none;
+} */
+
+/* 
+@media (max-width: 1320px) {
+    button {
+        display:none
+    }
+}
+@media (max-width: 1320px) {
+    .firstul {
+        display:none
+    }
+} */
+
+
+@media (max-width: 991px) {
+    .navnav, button {
+    background-image: linear-gradient(25deg, #226992 25%, #110e41 75%);
+}
 }
 
+@media (max-width: 425px) {
+    .navnav, button {
+    background-image: linear-gradient(25deg, #226992 25%, #130e5c 75%);
+}
+}
