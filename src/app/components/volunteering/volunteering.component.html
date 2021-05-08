@@ -66,7 +66,17 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-6 ">
-                            <li *ngFor="let r of responsibilities" class="takenJobs">
+                            <li class="takenJobs">
+                                <h4>Founder</h4>
+                                <p># of Spots: Brianna/Brianna</p>  
+                                <p>desc</p>     
+                            </li>
+                            <li class="takenJobs">
+                                <h4>Web Dev</h4>
+                                <p># of Spots: 2/2</p>  
+                                <p>Brianna + Christina. Did we kill this or naw?</p>     
+                            </li>
+                            <li *ngFor="let r of responsibilities">
                                 <h4 >{{r.description}}</h4>
                                 <div id={{r.id}} style="background-color:#212529; padding: 10px; width:220px;">
                                     <label>
