@@ -11,7 +11,7 @@
                 <div class="col">
                     <div class="nes-field is-inline">
                         <label for="warning_field">Username</label>
-                        <input [(ngModel)]="existingUser.nickname" type="text" id="warning_field" class="nes-input is-warning"
+                        <input [(ngModel)]="existingUser.nickname" type="text" name="nickname" id="warning_field" class="nes-input is-warning"
                             placeholder="bluepineapple47" required>
                     </div>
                 </div>
@@ -21,15 +21,14 @@
                 <div class="col">
                     <div class="nes-field is-inline">
                         <label for="warning_field">Password</label>
-                        <input [(ngModel)]="existingUser.password" type="password" mdbValidate minLength="10" maxLength="25" id="warning_field"
+                        <input [(ngModel)]="existingUser.password" type="password" name="password" mdbValidate minLength="10" maxLength="25" id="warning_field"
                             class="nes-input is-warning form-control " placeholder="******" required>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col" (click)="signInUser()">
-                    
+                <div class="col" (click)="signIn()">
                     <button type="button" class="nes-btn is-warning is-right">Sign In</button>
                 </div>
             </div>
