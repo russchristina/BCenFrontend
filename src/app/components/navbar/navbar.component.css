@@ -1,6 +1,10 @@
 #bcenlogo {
     border-radius: 70px;
 }
+img {
+    width: 450px;
+    height: 150px;
+}
 
 nav {
     padding: 0;
@@ -88,3 +92,10 @@ nav {
     background-image: linear-gradient(25deg, #226992 25%, #130e5c 75%);
 }
 }
+
+@media (max-width: 371px) {
+    img {
+        width: 350px;
+    }
+}
+
