@@ -21,8 +21,7 @@ const routes: Routes = [
   },
   {
     component: RegistrationComponent,
-    path: "register",
-    canActivate: [CanActivateRoutes]
+    path: "register"
   },
   {
     component: ProgrammingComponent,

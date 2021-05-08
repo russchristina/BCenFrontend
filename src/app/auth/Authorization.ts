@@ -1,7 +1,9 @@
 import { CanActivate, RouterStateSnapshot } from "@angular/router";
 import { UserCacheService } from '../services/user-cache.service';
+import { Injectable } from '@angular/core';
 
-class UserAuth{
+@Injectable()
+export class UserAuth{
     constructor(private userCacheService:UserCacheService){
     }
 
@@ -21,6 +23,7 @@ class UserAuth{
     }
 }
 
+@Injectable()
 export class CanActivateRoutes implements CanActivate{
 
     constructor(private userAuth:UserAuth){

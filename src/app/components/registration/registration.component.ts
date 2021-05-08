@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/User';
 import { UserCacheService } from 'src/app/services/user-cache.service';
+import { Router } from '@angular/router';
 
 /*This is where we will send user data to the API*/
 
@@ -14,7 +15,7 @@ export class RegistrationComponent implements OnInit {
 
   newUser:User = new User()
 
-  constructor(private userService:UserService, private userCacheService:UserCacheService) { }
+  constructor(private userService:UserService, private userCacheService:UserCacheService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -34,6 +35,8 @@ export class RegistrationComponent implements OnInit {
             console.log('Rejected')
           }
         )
+
+        this.router.navigate(['programming'])
       },
       () => {
         console.log('Ooops! Something went wrong!')

@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CanActivateRoutes, UserAuth } from './auth/Authorization';
 
 
 
@@ -42,7 +43,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [CanActivateRoutes, UserAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

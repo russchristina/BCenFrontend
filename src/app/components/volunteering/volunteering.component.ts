@@ -43,7 +43,6 @@ export class VolunteeringComponent implements OnInit {
         console.log(this.responsibilities)
         //Checkbox states are initialized here because the responsibilities are populated asynchronously
         this.initializeCheckboxStates()
-        console.log(this.checkBoxStates)
       },
       () => {
         console.log('Ooops! Something went wrong!')
@@ -106,27 +105,28 @@ export class VolunteeringComponent implements OnInit {
        }
      )
 
-     //abstract out into isSignedUp
-     //Check that the user is not already signed up for a responsibility
-     for(let r of this.responsibilities){
-       if(r.id === responsibilityId){
-         for(let u of r.users){
-           if(u.name === currentUser.name){
-         //The user cannot select this responsibility
-         return;
-           }
-         }
-       }
-     }
-
     //Find the responsibility in the list of available responsibilities by its ID and check the number of participants. I need to make sure that a user cannot sign up for a responsibility that is at its limit for participants.
     //Yikes. I'm tired of iterating through this array, but it's also the case that if I ever just rely on the index alone, I have to make sure that I haven't changed the order of the elements of even removed an element from the array (well, pseudo removal via making an entirely new array) because that will completely throw off any algorithm which depends on a certain element have a certain index
     for(let r of this.responsibilities){
       if(r.id === responsibilityId && r.users.length < r.upperlimit){
-        if(this.checkBoxStates[r.id - 1] == false){
+        if(this.checkBoxStates[r.id - 1] === false){
+          console.log("i'm running")
+           //abstract out into isSignedUp
+      //Check that the user is not already signed up for a responsibility
+      for(let r of this.responsibilities){
+        if(r.id === responsibilityId){
+          for(let u of r.users){
+            if(u.name === currentUser.name){
+          //The user cannot select this responsibility
+          return;
+            }
+          }
+        }
+      }
         this.userCacheService.getUserData().subscribe(
           (user) => {
             r.users.push(user)
+            console.log(this.responsibilities)
             console.log('user added')
             //Unforuntately, this depends on nothing about the order of the responsibilities in the array changing. This makes my stomach hurt.
             this.checkBoxStates[r.id - 1] = true
@@ -139,13 +139,14 @@ export class VolunteeringComponent implements OnInit {
           //deselection occurs
           this.deselectResponsibility(r.id)
           this.checkBoxStates[r.id - 1] = false
+          console.log(this.responsibilities)
         }
       }
     }
   }
 
   deselectResponsibility(responsibilityId:number):void{
-
+    console.log('deselection actually occurs')
     let currentUser = new User()
     this.userCacheService.getUserData().subscribe(
       (data) => {

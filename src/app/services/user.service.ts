@@ -23,6 +23,8 @@ export class UserService {
   }
 
   findUser(user:User): Observable<User>{
-    return this.http.post(environment.findUser, JSON.stringify(user)) as Observable<User>
+
+    let head:HttpHeaders = new HttpHeaders({"Content-Type":"application/json"})
+    return this.http.post(environment.findUser, JSON.stringify(user), {headers:head}) as Observable<User>
   }
 }
