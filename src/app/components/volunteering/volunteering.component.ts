@@ -110,7 +110,6 @@ export class VolunteeringComponent implements OnInit {
     for(let r of this.responsibilities){
       if(r.id === responsibilityId && r.users.length < r.upperlimit){
         if(this.checkBoxStates[r.id - 1] === false){
-          console.log("i'm running")
            //abstract out into isSignedUp
       //Check that the user is not already signed up for a responsibility
       for(let r of this.responsibilities){
@@ -127,10 +126,8 @@ export class VolunteeringComponent implements OnInit {
           (user) => {
             r.users.push(user)
             console.log(this.responsibilities)
-            console.log('user added')
             //Unforuntately, this depends on nothing about the order of the responsibilities in the array changing. This makes my stomach hurt.
             this.checkBoxStates[r.id - 1] = true
-            console.log(this.checkBoxStates)
           },
           () => {
             console.log('Cannot access cached user.')
@@ -139,14 +136,12 @@ export class VolunteeringComponent implements OnInit {
           //deselection occurs
           this.deselectResponsibility(r.id)
           this.checkBoxStates[r.id - 1] = false
-          console.log(this.responsibilities)
         }
       }
     }
   }
 
   deselectResponsibility(responsibilityId:number):void{
-    console.log('deselection actually occurs')
     let currentUser = new User()
     this.userCacheService.getUserData().subscribe(
       (data) => {

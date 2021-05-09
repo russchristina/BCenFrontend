@@ -23,6 +23,7 @@ export class SignInComponent implements OnInit {
   signIn():void{
     this.userService.findUser(this.existingUser).subscribe(
       (data) => {
+        //This is totally my bad. The backend returns null if the user isn't an authenticated one. That caused the null issue on the frontend. This business logic should be moved to the service.
         if(data === null) {this.existingUser = new User()}
         else this.existingUser = data
         if(this.existingUser.id === 0){
