@@ -4,7 +4,7 @@ import { UserService } from 'src/app/services/user.service';
 import { UserCacheService } from 'src/app/services/user-cache.service';
 import { Router } from '@angular/router';
 import {catchError} from 'rxjs/operators'
-import {of} from 'rxjs'
+import {of, empty} from 'rxjs'
 
 @Component({
   selector: 'app-sign-in',
@@ -21,12 +21,11 @@ export class SignInComponent implements OnInit {
   existingUser:User = new User()
 
   signIn():void{
-    this.userService.findUser(this.existingUser).pipe(
-      catchError(error => (of(new User())))
-    ).subscribe(
+    this.userService.findUser(this.existingUser).subscribe(
       (data) => {
-        this.existingUser = data
-        if(this.existingUser === null){
+        if(data === null) {this.existingUser = new User()}
+        else this.existingUser = data
+        if(this.existingUser.id === 0){
           //This block only runs once; if there's an error, the error handler continues to execute
           //This means that the user credentials are wrong. Probably just tell the user their credentials are wrong.
         }else{
