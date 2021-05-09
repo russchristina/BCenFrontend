@@ -21,19 +21,19 @@
         <div class="col-4">
             <div class="nes-field">
                 <label for="name_field">Your name</label>
-                <input [(ngModel)]="newEvent.creator.name" type="text" id="name_field" class="nes-input" />
+                <input [(ngModel)]="newEvent.creator.name" type="text" id="name_field" class="nes-input" required />
             </div>
         </div>
         <div class="col-2">
             <div class="nes-field">
                 <label for="name_field">Min. # Ppl</label>
-                <input [(ngModel)]="newEvent.minimumparticipants"type="text" id="name_field" class="nes-input" placeholder="2"/>
+                <input [(ngModel)]="newEvent.minimumparticipants"type="text" id="name_field" class="nes-input" placeholder="2" required />
             </div>
         </div>
         <div class="col-6">
             <div class="nes-field">
                 <label for="name_field">Panel Title</label>
-                <input [(ngModel)]="newEvent.title"type="text" id="name_field" class="nes-input" />
+                <input [(ngModel)]="newEvent.title"type="text" id="name_field" class="nes-input" required />
             </div>
         </div>
     </div>
@@ -42,13 +42,13 @@
         <div class="col-6">
             <div class="nes-field">
                 <label for="name_field">Category</label>
-                <input [(ngModel)]="newEvent.category"type="text" id="name_field" class="nes-input" placeholder="Kpop, Anime, Games, Fashion, etc."/>
+                <input [(ngModel)]="newEvent.category"type="text" id="name_field" class="nes-input" placeholder="Kpop, Anime, Games, Fashion, etc." required />
             </div>
         </div>
         <div class="col-6">
             <div class="nes-field">
                 <label for="name_field">Description</label>
-                <textarea [(ngModel)]="newEvent.description"type="text" id="name_field" class="nes-input"></textarea>
+                <textarea [(ngModel)]="newEvent.description"type="text" id="name_field" class="nes-input" required ></textarea>
             </div>
         </div>
     </div>
