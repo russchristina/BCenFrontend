@@ -47,6 +47,8 @@ export class RegistrationComponent implements OnInit {
 paidOut(buttonValue):void{
   if(buttonValue === "true") this.newUser.paidinfull = true
   else this.newUser.paidinfull = false
+
+  console.log(this.newUser)
 }
 
 }
