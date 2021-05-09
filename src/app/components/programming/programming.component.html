@@ -6,52 +6,54 @@
     <div class="row">
         <div class="col borderLine"></div>
     </div>
-    <div class="row">
-        <div class="col-6">
-            <p id="intro">Give us details on your panel and add it to the list!</p>
+    <form ngNativeValidate>
+        <div class="row">
+            <div class="col-6">
+                <p id="intro">Give us details on your panel and add it to the list!</p>
+            </div>
+            <!-- match this one up later -->
+            <div class="col-6">
+                <button (click)="createEvent()"type="submit" class="nes-btn is-warning submit">Add!
+                </button>
+            </div>
         </div>
-        <!-- match this one up later -->
-        <div class="col-6">
-            <button (click)="createEvent()"type="button" class="nes-btn is-warning submit">Add!
-            </button>
-        </div>
-    </div>
 
-    <div class="row ">
-        <div class="col-4">
-            <div class="nes-field">
-                <label for="name_field">Your name</label>
-                <input [(ngModel)]="newEvent.creator.name" type="text" id="name_field" class="nes-input" required />
+        <div class="row ">
+            <div class="col-4">
+                <div class="nes-field">
+                    <label for="name_field">Your name</label>
+                    <input [(ngModel)]="newEvent.creator.name" type="text" id="name_field" class="nes-input" required />
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="nes-field">
+                    <label for="name_field">Min. # Ppl</label>
+                    <input [(ngModel)]="newEvent.minimumparticipants"type="text" id="name_field" class="nes-input" placeholder="2" required />
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="nes-field">
+                    <label for="name_field">Panel Title</label>
+                    <input [(ngModel)]="newEvent.title"type="text" id="name_field" class="nes-input" required />
+                </div>
             </div>
         </div>
-        <div class="col-2">
-            <div class="nes-field">
-                <label for="name_field">Min. # Ppl</label>
-                <input [(ngModel)]="newEvent.minimumparticipants"type="text" id="name_field" class="nes-input" placeholder="2" required />
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="nes-field">
-                <label for="name_field">Panel Title</label>
-                <input [(ngModel)]="newEvent.title"type="text" id="name_field" class="nes-input" required />
-            </div>
-        </div>
-    </div>
 
-    <div class="row finalRow">
-        <div class="col-6">
-            <div class="nes-field">
-                <label for="name_field">Category</label>
-                <input [(ngModel)]="newEvent.category"type="text" id="name_field" class="nes-input" placeholder="Kpop, Anime, Games, Fashion, etc." required />
+        <div class="row finalRow">
+            <div class="col-6">
+                <div class="nes-field">
+                    <label for="name_field">Category</label>
+                    <input [(ngModel)]="newEvent.category"type="text" id="name_field" class="nes-input" placeholder="Kpop, Anime, Games, Fashion, etc." required />
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="nes-field">
+                    <label for="name_field">Description</label>
+                    <textarea [(ngModel)]="newEvent.description"type="text" id="name_field" class="nes-input" required ></textarea>
+                </div>
             </div>
         </div>
-        <div class="col-6">
-            <div class="nes-field">
-                <label for="name_field">Description</label>
-                <textarea [(ngModel)]="newEvent.description"type="text" id="name_field" class="nes-input" required ></textarea>
-            </div>
-        </div>
-    </div>
+    </form>
     <div class="row title aboutHeart">
         <h2 class="titles" id="panelList">Panels</h2>
     </div>

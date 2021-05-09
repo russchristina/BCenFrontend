@@ -37,13 +37,14 @@
         </div>
         <div class="row">
             <div class="col">
-                <p>Register below to view BCen panel programming and volunteer for a role in making BCen a success!</p>
+                <p>Register below to view BCen panel programming and volunteer for a role in making BCen a success!
+                </p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12">
-                <form>
+                <form ngNativeValidate>
                     <ol>
                         <div class="">
                             <div class="row">
@@ -154,7 +155,7 @@
                                             class="nes-textarea" name="requests"></textarea>
                                     </li>
                                     <div class="subBtn">
-                                        <button (click)="registerUser()" type="button" class="nes-btn is-warning">
+                                        <button (click)="registerUser()" type="submit" class="nes-btn is-warning">
                                             Submit!
                                         </button>
                                     </div>
