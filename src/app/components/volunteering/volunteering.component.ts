@@ -19,24 +19,33 @@ import { User } from 'src/app/models/User';
 })
 export class VolunteeringComponent implements OnInit {
 
-  constructor(private responsibilityService:ResponsibilityService, private userCacheService:UserCacheService) { }
+  constructor(private responsibilityService: ResponsibilityService, private userCacheService: UserCacheService) { }
 
   ngOnInit(): void {
     this.findAllResponsibilities()
+    this.userCacheService.getUserData().subscribe(
+      (data) => {
+        this.currentUser = data
+      },
+      () => {
+        console.log('Could not fetch user data!')
+      }
+    )
   }
 
-  responsibilities:Responsibility[] = [];
-  userSelectedResponsibilities:Responsibility[] = []
-  checkBoxStates:boolean[] = []
+  responsibilities: Responsibility[] = [];
+  userSelectedResponsibilities: Responsibility[] = []
+  checkBoxStates: boolean[] = []
+  currentUser: User = new User()
 
-  initializeCheckboxStates():void{
-    for(let r of this.responsibilities){
+  initializeCheckboxStates(): void {
+    for (let r of this.responsibilities) {
       //All checkbox states are false to begin with, meaning they aren't checked.
       this.checkBoxStates.push(false)
     }
   }
 
-  findAllResponsibilities():void{
+  findAllResponsibilities(): void {
     this.responsibilityService.findAll().subscribe(
       (data) => {
         this.responsibilities = data
@@ -50,7 +59,7 @@ export class VolunteeringComponent implements OnInit {
     )
   }
 
-  updateResponsibilities():void{
+  updateResponsibilities(): void {
 
     //Really abstract all of this out because I could cry. :(
     this.responsibilityService.update(this.responsibilities).subscribe(
@@ -63,19 +72,12 @@ export class VolunteeringComponent implements OnInit {
     )
   }
 
-  tallyResponsibilities():number{
+  tallyResponsibilities(): number {
     let numberOfResponsibilities = 0;
-    let currentUserName:String = "";
 
-    this.userCacheService.getUserData().subscribe(
-      (user) => {
-        currentUserName= user.name
-      }
-    )
-
-    for(let r of this.responsibilities){
-      for(let u of r.users){
-        if(u.name === currentUserName){
+    for (let r of this.responsibilities) {
+      for (let u of r.users) {
+        if (u.name === this.currentUser.name) {
           numberOfResponsibilities++;
         }
       }
@@ -85,85 +87,59 @@ export class VolunteeringComponent implements OnInit {
   }
 
   //Define the logic for the user taking on a responsibility
-  selectResponsibility(responsibilityId:number):void{
+  selectResponsibility(responsibilityId: number): void {
 
     //Check to see if the user has signed up for 3 responsibilities already
-    if(this.tallyResponsibilities() > 3){
+    if (this.tallyResponsibilities() > 3) {
       //Show error message to user and end method
       return;
     }
 
-     //I also have to check if they're already signed up for that responsibility
-
-     let currentUser = new User()
-     this.userCacheService.getUserData().subscribe(
-       (data) => {
-         currentUser = data
-       },
-       () => {
-         console.log('Could not get cached user.')
-       }
-     )
-
     //Find the responsibility in the list of available responsibilities by its ID and check the number of participants. I need to make sure that a user cannot sign up for a responsibility that is at its limit for participants.
     //Yikes. I'm tired of iterating through this array, but it's also the case that if I ever just rely on the index alone, I have to make sure that I haven't changed the order of the elements of even removed an element from the array (well, pseudo removal via making an entirely new array) because that will completely throw off any algorithm which depends on a certain element have a certain index
-    for(let r of this.responsibilities){
-      if(r.id === responsibilityId && r.users.length < r.upperlimit){
-        if(this.checkBoxStates[r.id - 1] === false){
-           //abstract out into isSignedUp
-      //Check that the user is not already signed up for a responsibility
-      for(let r of this.responsibilities){
-        if(r.id === responsibilityId){
-          for(let u of r.users){
-            if(u.name === currentUser.name){
-          //The user cannot select this responsibility
-          return;
+    for (let r of this.responsibilities) {
+      if (r.id === responsibilityId && r.users.length < r.upperlimit) {
+        if (this.checkBoxStates[r.id - 1] === false) {
+          //abstract out into isSignedUp
+          //Check that the user is not already signed up for a responsibility
+          for (let r of this.responsibilities) {
+            if (r.id === responsibilityId) {
+              for (let u of r.users) {
+                if (u.name === this.currentUser.name) {
+                  //The user cannot select this responsibility
+                  return;
+                }
+              }
             }
           }
+          r.users.push(this.currentUser)
+          console.log(this.responsibilities)
+          //Unforuntately, this depends on nothing about the order of the responsibilities in the array changing. This makes my stomach hurt.
+          this.checkBoxStates[r.id - 1] = true
         }
-      }
-        this.userCacheService.getUserData().subscribe(
-          (user) => {
-            r.users.push(user)
-            console.log(this.responsibilities)
-            //Unforuntately, this depends on nothing about the order of the responsibilities in the array changing. This makes my stomach hurt.
-            this.checkBoxStates[r.id - 1] = true
-          },
-          () => {
-            console.log('Cannot access cached user.')
-          }
-        )}else{
-          //deselection occurs
-          this.deselectResponsibility(r.id)
-          this.checkBoxStates[r.id - 1] = false
-        }
+      } else {
+        //deselection occurs
+        this.deselectResponsibility(r.id)
+        this.checkBoxStates[r.id - 1] = false
       }
     }
   }
 
-  deselectResponsibility(responsibilityId:number):void{
-    let currentUser = new User()
-    this.userCacheService.getUserData().subscribe(
-      (data) => {
-        currentUser = data
-      },
-      () => {
-        console.log('Could not fetch current user!')
-      }
-    )
+deselectResponsibility(responsibilityId: number): void {
+  
     //remove the user from the responsibility
-    for(let r of this.responsibilities){
-      if(r.id === responsibilityId){
-        //The user IDs are not in order, so I can't use an enhanced for loop to move through the users to splice by index later. Ouch.
-        for(let i = 0; i < r.users.length; i++){
-          //Based on your implementation, this should be true anyway.
-          if(r.users[i].name === currentUser.name){
-            //Remove this user from the users array for the responsibility
-            console.log(r.users.splice(i, 1))
-          }
-        }
+    for(let r of this.responsibilities) {
+  if (r.id === responsibilityId) {
+    //The user IDs are not in order, so I can't use an enhanced for loop to move through the users to splice by index later. Ouch.
+    for (let i = 0; i < r.users.length; i++) {
+      //Based on your implementation, this should be true anyway.
+      if (r.users[i].name === this.currentUser.name) {
+        //Remove this user from the users array for the responsibility
+        console.log(r.users.splice(i, 1))
       }
     }
+  }
+}
   }
 
 }
