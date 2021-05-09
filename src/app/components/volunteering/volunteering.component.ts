@@ -90,7 +90,7 @@ export class VolunteeringComponent implements OnInit {
   selectResponsibility(responsibilityId: number): void {
 
     //Check to see if the user has signed up for 3 responsibilities already
-    if (this.tallyResponsibilities() > 3) {
+    if (this.tallyResponsibilities() === 3) {
       //Show error message to user and end method
       return;
     }
