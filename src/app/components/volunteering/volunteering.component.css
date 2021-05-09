@@ -32,11 +32,11 @@ section {
 }
 
 li {
-    margin: 10px
+    margin: 35px 10px;
 }
 
 .takenJobs {
-    color: lightgrey;
+    color: gray;
 }
 .kirbz{
     font-size: 10px;
@@ -95,5 +95,13 @@ li {
 @media (max-width: 400px) {
     .star {
         font-size: 15px;
+    }
+}
+@media (max-width: 375px) {
+    .nes-balloon {
+        max-width: 55%;
+    }
+    .nes-kirby {
+        width: 6px;
     }
 }

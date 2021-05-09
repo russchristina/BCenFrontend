@@ -54,6 +54,19 @@
     font-size: 20px;
     
 }
+@keyframes bounce { 0% { transform: translateY(60px); } 100% { transform: translateY(-30px); } }
+#benny {
+    
+ animation: bounce 0.8s infinite alternate; 
+}
+img {
+    position: absolute;
+    right: -85px;
+    bottom: -50px;
+}
+.nes-balloon {
+    width: 70%;
+}
 
 @media (max-width: 1450px) {
     .regBtn {
@@ -101,5 +114,15 @@
 @media (max-width: 425px) {
     #mdTxt {
         margin-left: -10px;
+    }
+    img {
+        position: absolute;
+        right: -55px;
+        bottom: -45px;
+    }
+    .nes-balloon {
+        width: 100%;
+        position: relative;
+        left: -40px;
     }
 }
