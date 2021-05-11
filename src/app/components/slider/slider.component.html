@@ -1,25 +1,9 @@
 <div class="photoSlider">
   <mdb-carousel [animation]="'slide'" class="mdslider" >
-    <mdb-carousel-item>
-      <img class="d-block logobanner w-100" src="../../assets/images/bcen-banner-regular.jpg" alt="First slide">
+    <ng-container *ngFor="let pic of pix">
+    <mdb-carousel-item  >
+      <img class="d-block logobanner w-100" src="../../assets/images/{{pic.name}}" alt={{pic.alt}} >
     </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img class="d-block w-100" src="../../assets/images/anton-maksimov-juvnsky-3jDZM3rgpz8-unsplash.jpg" alt="Second slide">
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img class="d-block w-100" src="../../assets/images/deadmau5-clan.jpg" class="d-block w-100" alt="Third slide">
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img class="d-block w-100" src="../../assets/images/gracia-dharma-qTlbO6mkQH0-unsplash.jpg" class="d-block w-100" alt="Third slide">
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img class="d-block w-100" src="../../assets/images/matoki-mask.jpg" class="d-block w-100" alt="Third slide">
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img class="d-block w-100" src="../../assets/images/pat-krupa-Of2rc0KOfVU-unsplash.jpg" class="d-block w-100" alt="Third slide">
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img class="d-block w-100" src="../../assets/images/samuel-berner-kcvEQb7GXZc-unsplash.jpg" class="d-block w-100" alt="Third slide">
-    </mdb-carousel-item>
+  </ng-container>
   </mdb-carousel>
 </div>
