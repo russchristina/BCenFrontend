@@ -18,6 +18,12 @@ S
     this.findAllEvents()
   }
 
+  
+  successAlert:object = {
+    type: 'success',
+    message: 'Your panel submission was successful!'
+  }
+  alertVisible:boolean = false
   events:Event[] = []
   newEvent:Event = new Event()
 
@@ -38,7 +44,7 @@ S
     this.userCacheService.getUserData().subscribe(
       (data) => {
         this.newEvent.creator = data
-        console.log(data)
+        this.alertVisible = !this.alertVisible
       },
       () => {
         console.log('Could not get cached user!')
