@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
-import {Event} from 'src/app/models/Event'
+import { Event } from 'src/app/models/Event'
 import { User } from 'src/app/models/User';
 import { UserCacheService } from 'src/app/services/user-cache.service';
-import {Subject} from 'rxjs';
-import {debounceTime} from 'rxjs/operators';
-import {NgbAlert} from '@ng-bootstrap/ng-bootstrap';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 
 /*This is where you will see events listed.*/
 @Component({
@@ -14,25 +14,25 @@ import {NgbAlert} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./programming.component.css']
 })
 export class ProgrammingComponent implements OnInit {
-S 
+  S
   private _success = new Subject<string>();
-  constructor(private eventService:EventService, private userCacheService:UserCacheService) { }
+  constructor(private eventService: EventService, private userCacheService: UserCacheService) { }
 
   ngOnInit(): void {
     this.findAllEvents()
   }
 
-  
-  successAlert:object = {
+
+  successAlert: object = {
     type: 'success',
     message: 'Your panel submission was successful!'
   }
-  alertVisible:boolean = false
-  events:Event[] = []
-  newEvent:Event = new Event()
+  alertVisible: boolean = false
+  events: Event[] = []
+  newEvent: Event = new Event()
 
 
-  findAllEvents():void{
+  findAllEvents(): void {
     this.eventService.findAllEvents().subscribe(
       (data) => {
         this.events = data
@@ -44,17 +44,13 @@ S
     )
   }
   successMessage = '';
-  @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert: NgbAlert;
-  createEvent():void{
+  @ViewChild('selfClosingAlert', { static: false }) selfClosingAlert: NgbAlert;
+  createEvent(): void {
     this._success.subscribe(message => this.successMessage = message);
     this._success.pipe(debounceTime(5000)).subscribe(() => this.successMessage = null);
     this.userCacheService.getUserData().subscribe(
       (data) => {
         this.newEvent.creator = data
-        
-        if (data) {
-          this._success.next("Panel added!");
-        }
       },
       () => {
         console.log('Could not get cached user!')
@@ -62,12 +58,28 @@ S
     )
     this.eventService.saveEvent(this.newEvent).subscribe(
       (data) => {
-        this.events.push(data)
+        
         //Perhaps I should consider re-rendering the view after this addition to the array is made.
+        if (
+          this.newEvent.title === "" ||
+          this.newEvent.description === "" ||
+          this.newEvent.minimumparticipants === "" ||
+          this.newEvent.category === ""
+        ) {
+            this._success.next("Missing information!");
+        } else if (
+          this.newEvent.title != "" && 
+          this.newEvent.description != "" &&
+          this.newEvent.minimumparticipants != "" &&
+          this.newEvent.category != ""
+          ) {
+            this.events.push(data)
+            this._success.next("Panel Added!");
+          } else {
+            console.log('Ooops! Something went wrong!')
+          }
       },
-      () => {
-        console.log('Ooops! Something went wrong!')
-      }
+   
     )
   }
 
