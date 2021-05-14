@@ -15,6 +15,10 @@
     /* font-family: 'Bangers', cursive; */
     font-family: 'Press Start 2P', cursive;
 }
+ngb-alert {
+    position: absolute;
+    right: 0;
+}
 .borderLine {
     background-color: black;
     width: 10px;

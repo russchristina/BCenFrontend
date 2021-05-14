@@ -12,9 +12,11 @@
                 <p id="intro">Give us details on your panel and add it to the list!</p>
             </div>
             <!-- match this one up later -->
-            <div class="col-6">
-                <!-- <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
-                </ngb-alert> -->
+            <div class="col-5">
+                <ngb-alert #selfClosingAlert *ngIf="successMessage" type="warning" (closed)="successMessage = ''">{{ successMessage }}
+                </ngb-alert>
+            </div>
+                <div class="col-1">
                 <button (click)="createEvent()"type="submit" class="nes-btn is-warning submit">Add!
                 </button>
             </div>
