@@ -1,9 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ResponsibilityService } from 'src/app/services/responsibility.service';
 import { Responsibility } from 'src/app/models/Responsibility';
 import { ThrowStmt } from '@angular/compiler';
 import { UserCacheService } from 'src/app/services/user-cache.service';
 import { User } from 'src/app/models/User';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 
 /*This is where we will list responsibilities.*/
 
@@ -19,6 +22,7 @@ import { User } from 'src/app/models/User';
 })
 export class VolunteeringComponent implements OnInit {
 
+  private _success = new Subject<string>();
   constructor(private responsibilityService: ResponsibilityService, private userCacheService: UserCacheService) { }
 
   ngOnInit(): void {
@@ -32,6 +36,12 @@ export class VolunteeringComponent implements OnInit {
       }
     )
   }
+
+  successAlert: object = {
+    type: 'success',
+    message: 'Your panel submission was successful!'
+  }
+  alertVisible: boolean = false
 
   responsibilities: Responsibility[] = [];
   userSelectedResponsibilities: Responsibility[] = []
@@ -58,15 +68,20 @@ export class VolunteeringComponent implements OnInit {
       }
     )
   }
-
+  successMessage = '';
+  @ViewChild('selfClosingAlert', { static: false }) selfClosingAlert: NgbAlert;
   updateResponsibilities(): void {
+    this._success.subscribe(message => this.successMessage = message);
+    this._success.pipe(debounceTime(5000)).subscribe(() => this.successMessage = null);
 
     //Really abstract all of this out because I could cry. :(
     this.responsibilityService.update(this.responsibilities).subscribe(
       (data) => {
         this.responsibilities = data
+        this._success.next("Thanks for Volunteering!");
       },
       () => {
+        this._success.next("Missing information! Could not update responsibilities.");
         console.log('Could not update responsibilities.')
       }
     )

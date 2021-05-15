@@ -72,12 +72,12 @@
                         <div class="col ">
                             <li class="takenJobs">
                                 <h4>Founder</h4>
-                                <p># of Spots: Brianna/Brianna</p>  
+                                <p>Spots Remaining: Brianna/Brianna</p>  
                                 <p>The Mother of Dragons. Or just BCen.</p>     
                             </li>
                             <li class="takenJobs">
                                 <h4>Web Dev</h4>
-                                <p># of Spots: 2/2</p>  
+                                <p>Spots Remaining: 0/2</p>  
                                 <p>Brianna + Christina. Did we kill this or naw?</p>     
                             </li>
                             <li *ngFor="let r of responsibilities">
@@ -88,7 +88,7 @@
                                       <span>Choose me!</span>
                                     </label>
                                   </div>
-                                <p># of Spots: {{(r.users.length >= r.upperlimit) ? 0 : r.upperlimit - r.users.length}} / {{r.upperlimit}}</p>  
+                                <p>Spots Remaining: {{(r.users.length >= r.upperlimit) ? 0 : r.upperlimit - r.users.length}} / {{r.upperlimit}}</p>  
                                 <p>{{r.name}}</p>     
                             </li>
                         </div>
@@ -97,8 +97,14 @@
             </ol>
         </div>
     </div>
-    <div class="col-6">
-        <button (click)="updateResponsibilities()" type="button" class="nes-btn is-warning submit">Submit!
-        </button>
+    <div class="row">
+        <div class="col-3">
+            <button (click)="updateResponsibilities()" type="button" class="nes-btn is-warning submit">Submit!
+            </button>
+        </div>
+        <div class="col-9">
+            <ngb-alert #selfClosingAlert *ngIf="successMessage" type="warning" (closed)="successMessage = ''">{{ successMessage }}
+            </ngb-alert>
+        </div>
     </div>
 </div>

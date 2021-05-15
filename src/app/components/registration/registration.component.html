@@ -5,7 +5,9 @@
         </button>
     </a>
 </div> -->
-<div class="">
+
+
+<div>
     <div class="nes-container with-title nesCont is-centered">
         <div class="row title aboutHeart">
             <div class="col-12">
@@ -57,29 +59,35 @@
                                         </div>
                                     </li>
                                     <li>
+                                        <!-- add regex to prevent spaces in input -->
                                         <div class="nes-field is-inline">
-                                            <label for="inline_field">Give me your nickname!</label>
+                                            <label for="inline_field">Give me your username!</label>
                                             <input [(ngModel)]="newUser.nickname" type="text" id="inline_field"
-                                                class="nes-input" placeholder="make it snazzy, no spaces" name="nickname">
+                                                class="nes-input" placeholder="make it snazzy, no spaces"
+                                                name="nickname" required>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="nes-field is-inline">
                                             <label for="inline_field">Enter your password.</label>
-                                            <input [(ngModel)]="newUser.password" type="text" id="inline_field"
-                                                class="nes-input" placeholder="banana ...oops this should be hidden" name="password">
+                                            <input [(ngModel)]="newUser.password" type="password" id="inline_field"
+                                            mdbValidate minLength="4" maxLength="25"
+                                                class="nes-input" placeholder="banana ...oops this should be hidden"
+                                                name="password" required>
                                         </div>
                                     </li>
                                     <li>
                                         <label>
                                             Have you paid Brianna?
-                                            <input value="true" type="radio" class="nes-radio" name="answer" (click)="paidOut($event.target.value)" checked />
-                                            <span >Yes</span>
+                                            <input value="true" type="radio" class="nes-radio" name="answer"
+                                                (click)="paidOut($event.target.value)" checked />
+                                            <span>Yes</span>
                                         </label>
 
                                         <label>
-                                            <input value="false" type="radio" class="nes-radio" name="answer" (click)="paidOut($event.target.value)" />
-                                            <span >No</span>
+                                            <input value="false" type="radio" class="nes-radio" name="answer"
+                                                (click)="paidOut($event.target.value)" />
+                                            <span>No</span>
                                         </label>
                                     </li>
                                     <li>
@@ -87,7 +95,8 @@
                                         <div class="nes-field is-inline">
                                             <label for="inline_field">Favorite Candy...and GO!</label>
                                             <input [(ngModel)]="newUser.favoritecandy" type="text" id="inline_field"
-                                                class="nes-input" placeholder="John Doritos" required name="favoriteCandy">
+                                                class="nes-input" placeholder="John Doritos" required
+                                                name="favoriteCandy">
                                         </div>
                                     </li>
                                     <li>
@@ -101,12 +110,14 @@
                                         <div class="nes-field is-inline">
                                             <label for="inline_field">List any food allergies or dislikes</label>
                                             <input [(ngModel)]="newUser.foodallergies" type="text" id="inline_field"
-                                                class="nes-input" placeholder="I HATE TACOS" required name="foodAllergies">
+                                                class="nes-input" placeholder="I HATE TACOS" required
+                                                name="foodAllergies">
                                         </div>
                                     </li>
                                     <li>
                                         <label for="textarea_field">How many panels do you want to run?</label>
-                                        <input [(ngModel)]="newUser.panels" id="input_field" class="nes-textarea" placeholder="32" name="panels"/>
+                                        <input [(ngModel)]="newUser.panels" type="number" id="input_field"
+                                            class="nes-textarea" placeholder="32" name="panels" />
                                     </li>
                                     <li>
 
@@ -131,8 +142,9 @@
 
                                         <div class="nes-field is-inline">
                                             <label for="inline_field">Top 2 Fave Anime Characters?</label>
-                                            <input [(ngModel)]="newUser.toptwoanimecharacters" type="text" id="inline_field"
-                                                class="nes-input" placeholder="Inuyasha,Kagome!" name="favoriteCharacters">
+                                            <input [(ngModel)]="newUser.toptwoanimecharacters" type="text"
+                                                id="inline_field" class="nes-input" placeholder="Inuyasha, Kagome!"
+                                                name="favoriteCharacters">
                                         </div>
                                     </li>
                                     <li>
@@ -144,25 +156,33 @@
                                     <li>
                                         <div class="nes-field is-inline">
                                             <label for="inline_field">Ultimate Bias(es) Name 2</label>
-                                            <input [(ngModel)]="newUser.toptwoultimatebiases" type="text" id="inline_field"
-                                                class="nes-input" placeholder="ie.  Taemin" name="biases">
+                                            <input [(ngModel)]="newUser.toptwoultimatebiases" type="text"
+                                                id="inline_field" class="nes-input" placeholder="ie.  Taemin"
+                                                name="biases">
                                         </div>
                                     </li>
                                     <li>
-                                        <label for="textarea_field">Any special requests to the planners, fun facts, notes?</label>
+                                        <label for="textarea_field">Any special requests to the planners, fun facts,
+                                            notes?</label>
                                         <textarea [(ngModel)]="newUser.additionalinfo" id="textarea_field"
                                             class="nes-textarea" name="requests"></textarea>
                                     </li>
-                                    <div class="subBtn">
-                                        <button (click)="registerUser()" type="submit" class="nes-btn is-warning">
-                                            Submit!
-                                        </button>
-                                    </div>
+                                    <div class="row">
+                                        <div class="subBtn col-3">
+                                            <button (click)="registerUser()" type="submit" class="nes-btn is-warning">
+                                                Submit!
+                                            </button>
+                                        </div>
+                                        <div class="col-9">
+                                            <ngb-alert #selfClosingAlert *ngIf="successMessage" type="warning" (closed)="successMessage = ''">{{ successMessage }}
+                                            </ngb-alert>
+                                        </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
                     </ol>
-            </form>
+                </form>
             </div>
         </div>
     </div>
