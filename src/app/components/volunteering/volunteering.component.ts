@@ -49,7 +49,6 @@ export class VolunteeringComponent implements OnInit {
     this.responsibilityService.findAll().subscribe(
       (data) => {
         this.responsibilities = data
-        console.log(this.responsibilities)
         //Checkbox states are initialized here because the responsibilities are populated asynchronously
         this.initializeCheckboxStates()
       },
@@ -113,7 +112,7 @@ export class VolunteeringComponent implements OnInit {
             }
           }
           r.users.push(this.currentUser)
-          console.log(this.responsibilities)
+          this.responsibilities
           //Unforuntately, this depends on nothing about the order of the responsibilities in the array changing. This makes my stomach hurt.
           this.checkBoxStates[r.id - 1] = true
         }
@@ -135,7 +134,7 @@ deselectResponsibility(responsibilityId: number): void {
       //Based on your implementation, this should be true anyway.
       if (r.users[i].name === this.currentUser.name) {
         //Remove this user from the users array for the responsibility
-        console.log(r.users.splice(i, 1))
+        r.users.splice(i, 1)
       }
     }
   }

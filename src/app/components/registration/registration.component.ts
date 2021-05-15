@@ -25,11 +25,8 @@ export class RegistrationComponent implements OnInit {
       (data) => {
         //We will need to add the user to the makeshift cache as well
         this.userCacheService.updateUser(data)
-        console.log(data.password)
         this.userCacheService.getUserData().subscribe(
           (user) => {
-            console.log(user.password)
-            console.log(user)
           },
           () =>{
             console.log('Rejected')
@@ -47,8 +44,6 @@ export class RegistrationComponent implements OnInit {
 paidOut(buttonValue):void{
   if(buttonValue === "true") this.newUser.paidinfull = true
   else this.newUser.paidinfull = false
-
-  console.log(this.newUser)
 }
 
 }
