@@ -17,6 +17,10 @@ export class SliderComponent implements OnInit {
       alt: "Nier Automata robot"
     },
     {
+      name: "bap.JPG",
+      alt: "naked deadmau5 before completion in an array of LED lights"
+    },
+    {
       name: "deadmau5-clan.jpg",
       alt: "Blue the Deadmau5 with friends from ACen"
     },
@@ -35,7 +39,15 @@ export class SliderComponent implements OnInit {
     {
       name: "samuel-berner-kcvEQb7GXZc-unsplash.jpg",
       alt: "dark photo of Totoro"
-    }
+    },
+    {
+      name: "kikibribri.jpg",
+      alt: "Photo of cosplayers Christina and Brianna"
+    },
+    {
+      name: "dmau5.jpg",
+      alt: "naked deadmau5 before completion in an array of LED lights"
+    },
   ]
   constructor() { }
   
