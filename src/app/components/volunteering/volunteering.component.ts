@@ -43,7 +43,7 @@ export class VolunteeringComponent implements OnInit {
   }
   alertVisible: boolean = false
 
-  responsibilities: Responsibility[] = [];
+  responsibilities: Responsibility[] = []
   userSelectedResponsibilities: Responsibility[] = []
   checkBoxStates: boolean[] = []
   currentUser: User = new User()
@@ -53,6 +53,7 @@ export class VolunteeringComponent implements OnInit {
       //All checkbox states are false to begin with, meaning they aren't checked.
       this.checkBoxStates.push(false)
     }
+    console.log(this.checkBoxStates)
   }
 
   findAllResponsibilities(): void {
@@ -103,6 +104,7 @@ export class VolunteeringComponent implements OnInit {
   //Define the logic for the user taking on a responsibility
   selectResponsibility(responsibilityId: number): void {
 
+    console.log(this.checkBoxStates)
     //Check to see if the user has signed up for 3 responsibilities already
     if (this.tallyResponsibilities() === 3) {
       //Show error message to user and end method
@@ -112,8 +114,14 @@ export class VolunteeringComponent implements OnInit {
     //Find the responsibility in the list of available responsibilities by its ID and check the number of participants. I need to make sure that a user cannot sign up for a responsibility that is at its limit for participants.
     //Yikes. I'm tired of iterating through this array, but it's also the case that if I ever just rely on the index alone, I have to make sure that I haven't changed the order of the elements of even removed an element from the array (well, pseudo removal via making an entirely new array) because that will completely throw off any algorithm which depends on a certain element have a certain index
     for (let r of this.responsibilities) {
+      //this is not true apparently
+      console.log(r.id)
+      console.log(responsibilityId)
       if (r.id === responsibilityId && r.users.length < r.upperlimit) {
+        console.log('this is true')
         if (this.checkBoxStates[r.id - 1] === false) {
+          console.log("check box state is false")
+          console.log(this.checkBoxStates)
           //abstract out into isSignedUp
           //Check that the user is not already signed up for a responsibility
           for (let r of this.responsibilities) {
@@ -131,11 +139,14 @@ export class VolunteeringComponent implements OnInit {
           //Unforuntately, this depends on nothing about the order of the responsibilities in the array changing. This makes my stomach hurt.
           this.checkBoxStates[r.id - 1] = true
         }
-      } else {
-        //deselection occurs
-        this.deselectResponsibility(r.id)
-        this.checkBoxStates[r.id - 1] = false
-      }
+        else {
+          //deselection occurs
+          console.log("checkbox state is true")
+          console.log(this.checkBoxStates)
+          this.deselectResponsibility(r.id)
+          this.checkBoxStates[r.id - 1] = false
+        }
+      } 
     }
   }
 
